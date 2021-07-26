@@ -1,8 +1,10 @@
+{include 'header.tpl'}
+
 <div class="container mt-5">
-    <h1>Formulario de Alta de Empleado</h1>
+    <h1>{$titulo}</h1>
     <br>
     <!-- Content here -->
-    <form method="post" , action="agregar">
+    <form method="post" , action="../router.php">
         <div class="row">
             <div class="col form-group">
                 <label>Nombre</label>
@@ -20,4 +22,6 @@
         <button type="submit" class="btn btn-primary mt-3">Enviar</button>
     </form>
 </div>
+
+{include 'footer.tpl'}
 

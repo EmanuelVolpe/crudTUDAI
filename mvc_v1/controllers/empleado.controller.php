@@ -48,6 +48,10 @@
             $empleado = $this->empleadoModel->getEmpleado($id);
             $this->empleadoView->showEmpleado($empleado);
         }
+
+        function muestraError(){
+            $this->empleadoView->showError();
+        }
     }
 
 

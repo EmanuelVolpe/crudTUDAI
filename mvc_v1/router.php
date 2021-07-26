@@ -49,8 +49,9 @@ switch ($params[0]) {
         $controller->actualizarEmpleado($id);
         break;
     default:
-        //header("HTTP/1.0 404 Not Found");
-        echo('404 Page not found Mannnnnnnnn');
+        header("HTTP/1.0 404 Not Found");
+        $controller = new EmpleadoController();
+        $controller->muestraError();
         break;
     /*case 'ver':
         $controller = new TaskController();
