@@ -5,11 +5,11 @@ class EmpleadoModel{
 
     private $conexion;
 
-    function __construct(){
+    public function __construct(){
         $this->conexion = $this->connection();
     }
 
-    function connection(){
+    private function connection(){
         try {
             $conexion = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PASS);
             return $conexion;
@@ -18,7 +18,7 @@ class EmpleadoModel{
         }
     }
 
-    function getEmpleados() {
+    public function getEmpleados() {
         //$conexion = $this->connection();
         $consulta = "select * from empleados order by nombre asc";
         $sentencia = $this->conexion->prepare($consulta);
@@ -28,13 +28,13 @@ class EmpleadoModel{
         return $empleados;
     }
 
-    function addEmpleado($nombre,$apellido,$email){
+    public function addEmpleado($nombre,$apellido,$email){
         //$conexion = $this->connection();
         $sentencia = $this->conexion->prepare("INSERT INTO empleados(nombre, apellido, email) VALUES(?,?,?)");
         $sentencia->execute([$nombre,$apellido,$email]);
     }
 
-    function deleteEmpleado($id){
+    public function deleteEmpleado($id){
         $sentencia = $this->conexion->prepare("DELETE FROM empleados WHERE id=?");
         $sentencia->execute([$id]);
     }

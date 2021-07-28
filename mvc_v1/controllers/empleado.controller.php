@@ -31,7 +31,7 @@
             $email = $_POST['email'];
 
             if(empty($nombre) || empty($apellido)){
-                echo 'Faltan datos obligatorios';
+                echo 'Faltan datos obligatorios'; //HAY QUE MODIFICARLO!!!!
                 die();
             }
 

@@ -4,7 +4,7 @@
     <h1>{$titulo}</h1>
     <br>
     <!-- Content here -->
-    <form method="post" , action="../router.php">
+    <form method="post"  action="agregar">
         <div class="row">
             <div class="col form-group">
                 <label>Nombre</label>

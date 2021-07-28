@@ -17,7 +17,10 @@
             <td>{$empleado->apellido}</td>
             <td>{$empleado->nombre}</td>
             <td>{$empleado->email}</td>
-            <td><a href='actualizar/{$empleado->id}' class='btn btn-outline-success btn-sm'>Editar</a> - <a href='eliminar/{$empleado->id}' class='btn btn-outline-danger btn-sm'>Borrar</a> - <a href='detallar/{$empleado->id}' class='btn btn-outline-warning btn-sm'>Detalles</a>
+            <td><a href='actualizar/{$empleado->id}' class='btn btn-outline-success btn-sm'>Editar</a> -
+                <a href='eliminar/{$empleado->id}' class='btn btn-outline-danger btn-sm'>Borrar</a> -
+                <a href='detallar/{$empleado->id}' class='btn btn-outline-warning btn-sm'>Detalles</a>
+            </td>
         </tr>
     {/foreach}
     </tbody>

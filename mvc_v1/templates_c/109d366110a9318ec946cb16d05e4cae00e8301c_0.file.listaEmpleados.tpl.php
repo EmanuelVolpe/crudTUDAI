@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-26 03:20:08
+/* Smarty version 3.1.39, created on 2021-07-26 04:09:56
   from 'C:\xampp\htdocs\crudTudai\mvc_v1\templates\listaEmpleados.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60fe0dc82fc926_63318877',
+  'unifunc' => 'content_60fe1974d32ce0_96844886',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '109d366110a9318ec946cb16d05e4cae00e8301c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\crudTudai\\mvc_v1\\templates\\listaEmpleados.tpl',
-      1 => 1627262405,
+      1 => 1627265387,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60fe0dc82fc926_63318877 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60fe1974d32ce0_96844886 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -53,9 +53,12 @@ $_smarty_tpl->tpl_vars['empleado']->do_else = false;
             <td><?php echo $_smarty_tpl->tpl_vars['empleado']->value->email;?>
 </td>
             <td><a href='actualizar/<?php echo $_smarty_tpl->tpl_vars['empleado']->value->id;?>
-' class='btn btn-outline-success btn-sm'>Editar</a> - <a href='eliminar/<?php echo $_smarty_tpl->tpl_vars['empleado']->value->id;?>
-' class='btn btn-outline-danger btn-sm'>Borrar</a> - <a href='detallar/<?php echo $_smarty_tpl->tpl_vars['empleado']->value->id;?>
+' class='btn btn-outline-success btn-sm'>Editar</a> -
+                <a href='eliminar/<?php echo $_smarty_tpl->tpl_vars['empleado']->value->id;?>
+' class='btn btn-outline-danger btn-sm'>Borrar</a> -
+                <a href='detallar/<?php echo $_smarty_tpl->tpl_vars['empleado']->value->id;?>
 ' class='btn btn-outline-warning btn-sm'>Detalles</a>
+            </td>
         </tr>
     <?php
 }

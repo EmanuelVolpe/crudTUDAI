@@ -1,6 +1,6 @@
 <?php
 include_once 'controllers/empleado.controller.php';
-//include_once 'controllers/auth.controller.php';
+include_once 'controllers/auth.controller.php';
 
 // defino la base url para la construccion de links con urls semánticas
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -30,7 +30,7 @@ switch ($params[0]) {
         $id = $params[1];
         $controller->mostrarEmpleado($id);
         break;
-    case 'mostrarformulario':
+    case 'mostrarFormularioEmpleado':
         $controller = new EmpleadoController();
         $controller->mostrarFormularioAlta();
         break;
@@ -48,24 +48,31 @@ switch ($params[0]) {
         $id = $params[1];
         $controller->actualizarEmpleado($id);
         break;
+    case 'login':
+        $controller = new AuthController();
+        $controller->login();
+        break;
+    case 'mostrarFormularioUser':
+        $controller = new AuthController();
+        $controller->mostrarFormularioAlta();
+        break;
+    case 'agregarUsuario':
+        $controller = new AuthController();
+        $controller->altaUser();
+        break;
+    case 'verify':
+        $controller = new AuthController();
+        $controller->verifyUser();
+        break;
+    /*case 'logout':
+        $controller = new AuthContoller();
+        $controller->logout();
+        break;
+    */
     default:
         header("HTTP/1.0 404 Not Found");
         $controller = new EmpleadoController();
         $controller->muestraError();
         break;
-    /*case 'ver':
-        $controller = new TaskController();
-        $id = $params[1];
-        $controller->showDetail($id);
-        break;
-    case 'verify':
-        $controller = new AuthContoller();
-        $controller->loginUser();
-        break;
-    case 'logout':
-        $controller = new AuthContoller();
-        $controller->logout();
-        break;
-    */
 }
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-26 03:29:05
+/* Smarty version 3.1.39, created on 2021-07-26 20:24:54
   from 'C:\xampp\htdocs\crudTudai\mvc_v1\templates\formAltaEmpleado.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60fe0fe133ac72_87327027',
+  'unifunc' => 'content_60fefdf6805548_82829592',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '13c1dec31716252e3c3afb9e4e1b8e40deb0566c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\crudTudai\\mvc_v1\\templates\\formAltaEmpleado.tpl',
-      1 => 1627262589,
+      1 => 1627323890,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_60fe0fe133ac72_87327027 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60fefdf6805548_82829592 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -31,7 +31,7 @@ $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_sm
 </h1>
     <br>
     <!-- Content here -->
-    <form method="post" , action="../router.php">
+    <form method="post"  action="agregar">
         <div class="row">
             <div class="col form-group">
                 <label>Nombre</label>
