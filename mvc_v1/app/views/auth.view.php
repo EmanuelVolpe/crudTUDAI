@@ -15,6 +15,11 @@
             $this->smarty->display('templates/home.tpl'); // muestro el template
         }
 
+        public function showNosotros(){
+            $this->smarty->assign('tituloPagina','Nosotos');
+            $this->smarty->display('templates/nosotros.tpl'); // muestro el template
+        }
+
         public function showLogin($msgDeError = null){
             $this->smarty->assign('titulo','FORMULARIO DE LOGIN');
             $this->smarty->assign('msgDeError',$msgDeError);

@@ -14,7 +14,7 @@ class AuthHelper {
      */
     public function checkLogged() {
         //session_start();
-        if (!isset($_SESSION['ID_USER'])) {
+        if (!isset($_SESSION['ID_USER']) && !isset($_SESSION['EMAIL_USER'])) {
             header("Location: " . BASE_URL . 'home');
             die(); 
         }

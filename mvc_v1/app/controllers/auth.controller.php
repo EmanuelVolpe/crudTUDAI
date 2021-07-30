@@ -19,6 +19,10 @@
             $this->authView->showHome();
         }
 
+        function nosotros(){
+            $this->authView->showNosotros();
+        }
+
         public function login(){
             $this->authView->showLogin();
         }

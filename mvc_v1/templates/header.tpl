@@ -18,7 +18,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav d-flex w-100">
             <li class="nav-item">
-                <a class="nav-link" href="home">Home</a>
+                <a class="nav-link">Sistema de Empleados</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="listar">Empleados</a>
@@ -40,12 +40,11 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav d-flex w-100">
             <li class="nav-item">
-                <a class="nav-link" href="home">Home</a>
+                <a class="nav-link">Sistema de Empleados</a>
             </li>                
         </ul>
     </div>
 </nav>
 <br>
-
 
 {/if}

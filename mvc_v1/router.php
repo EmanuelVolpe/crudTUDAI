@@ -68,6 +68,9 @@ switch ($params[0]) {
         $controller = new AuthController();
         $controller->logout();
         break;
+    case 'nosotros':
+        $controller = new AuthController();
+        $controller->nosotros();
     default:
         header("HTTP/1.0 404 Not Found");
         $controller = new EmpleadoController();

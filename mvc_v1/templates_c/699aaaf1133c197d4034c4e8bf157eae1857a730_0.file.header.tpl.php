@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-30 05:43:30
+/* Smarty version 3.1.39, created on 2021-07-30 06:00:29
   from 'C:\xampp\htdocs\crudTudai\mvc_v1\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610375628c2ce4_32299074',
+  'unifunc' => 'content_6103795d119a58_85765981',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '699aaaf1133c197d4034c4e8bf157eae1857a730' => 
     array (
       0 => 'C:\\xampp\\htdocs\\crudTudai\\mvc_v1\\templates\\header.tpl',
-      1 => 1627616605,
+      1 => 1627617612,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_610375628c2ce4_32299074 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6103795d119a58_85765981 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +43,7 @@ function content_610375628c2ce4_32299074 (Smarty_Internal_Template $_smarty_tpl)
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav d-flex w-100">
             <li class="nav-item">
-                <a class="nav-link" href="home">Home</a>
+                <a class="nav-link">Sistema de Empleados</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="listar">Empleados</a>
@@ -66,13 +66,12 @@ function content_610375628c2ce4_32299074 (Smarty_Internal_Template $_smarty_tpl)
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav d-flex w-100">
             <li class="nav-item">
-                <a class="nav-link" href="home">Home</a>
+                <a class="nav-link">Sistema de Empleados</a>
             </li>                
         </ul>
     </div>
 </nav>
 <br>
-
 
 <?php }
 }
