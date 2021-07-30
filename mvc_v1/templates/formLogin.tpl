@@ -14,6 +14,13 @@
                 <label for="inputPassword4">Password</label>
                 <input type="password" class="form-control" name="password" placeholder="Contraseña">
             </div>
+            <br>
+            {if $msgDeError}
+                <div class="row mt-2 alert alert-danger">
+                    {$msgDeError}
+                </div>
+            {/if}
+
         </div>
         <button type="submit" class="btn btn-success mt-3">Ingresar</button>
     </form>

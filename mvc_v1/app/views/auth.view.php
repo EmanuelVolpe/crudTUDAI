@@ -9,8 +9,15 @@
             $this->smarty = new Smarty();
         }
 
-        public function showLogin(){
+        public function showHome(){
+            $this->smarty->assign('titulo','BIENVENIDO A LA APP !!!!');
+            $this->smarty->assign('tituloPagina','Bienvenido');
+            $this->smarty->display('templates/home.tpl'); // muestro el template
+        }
+
+        public function showLogin($msgDeError = null){
             $this->smarty->assign('titulo','FORMULARIO DE LOGIN');
+            $this->smarty->assign('msgDeError',$msgDeError);
             $this->smarty->assign('tituloPagina','Formulario de Login');
             $this->smarty->display('templates/formLogin.tpl'); // muestro el template
         }
@@ -20,7 +27,5 @@
             $this->smarty->assign('tituloPagina','Formulario de Alta');
             $this->smarty->display('templates/formAltaUser.tpl'); // muestro el template
         }
-
-
 
     }

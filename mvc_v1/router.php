@@ -1,6 +1,6 @@
 <?php
-include_once 'controllers/empleado.controller.php';
-include_once 'controllers/auth.controller.php';
+include_once 'app/controllers/empleado.controller.php';
+include_once 'app/controllers/auth.controller.php';
 
 // defino la base url para la construccion de links con urls semánticas
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -18,7 +18,7 @@ $params = explode('/', $action);
 // determina que camino seguir según la acción
 switch ($params[0]) {
     case 'home':
-        $controller = new EmpleadoController();
+        $controller = new AuthController();
         $controller->mostrarHome();
         break;
     case 'listar':
@@ -43,11 +43,11 @@ switch ($params[0]) {
         $id = $params[1];
         $controller->eliminarEmpleado($id);
         break;
-    case 'actualizar':
+    /*case 'actualizar':
         $controller = new EmpleadoController();
         $id = $params[1];
         $controller->actualizarEmpleado($id);
-        break;
+        break;*/
     case 'login':
         $controller = new AuthController();
         $controller->login();
@@ -64,11 +64,10 @@ switch ($params[0]) {
         $controller = new AuthController();
         $controller->verifyUser();
         break;
-    /*case 'logout':
-        $controller = new AuthContoller();
+    case 'logout':
+        $controller = new AuthController();
         $controller->logout();
         break;
-    */
     default:
         header("HTTP/1.0 404 Not Found");
         $controller = new EmpleadoController();

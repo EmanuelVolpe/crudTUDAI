@@ -1,5 +1,5 @@
 <?php
-require_once('./models/empleado.model.php');
+require_once('app/models/empleado.model.php');
 require_once('./libs/smarty/libs/Smarty.class.php');
 
 class EmpleadoView {
@@ -8,12 +8,6 @@ class EmpleadoView {
 
     function __construct(){
         $this->smarty = new Smarty();
-    }
-
-    function showHome(){
-        $this->smarty->assign('titulo','PAGINA DE INICIO');
-        $this->smarty->assign('tituloPagina','PAGINA DE INICIO');
-        $this->smarty->display('templates/home.tpl'); // muestro el template
     }
 
     function showError(){

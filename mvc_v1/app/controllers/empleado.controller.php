@@ -1,19 +1,19 @@
 <?php
-    include_once './models/empleado.model.php';
-    include_once './views/empleado.view.php';
+    include_once 'app/models/empleado.model.php';
+    include_once 'app/views/empleado.view.php';
+    include_once 'app/helpers/auth.helper.php';
 
     class EmpleadoController{
 
         private $empleadoModel;
         private $empleadoView;
+        private $authHelper;
 
         public function __construct(){
             $this->empleadoModel = new EmpleadoModel();
             $this->empleadoView = new EmpleadoView();
-        }
-
-        function mostrarHome(){
-            $this->empleadoView->showHome();
+            $this->authHelper = new AuthHelper();
+            $this->authHelper->checkLogged();
         }
 
         function mostrarFormularioAlta(){

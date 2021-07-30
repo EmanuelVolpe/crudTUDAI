@@ -4,12 +4,13 @@
     <h1>{$titulo}</h1>
     <div class="jumbotron">
         <div class="row">
-            <div "col form-group">
-                <a class="btn btn-success" href="login">Login</a>
-            </div>
-            <div "col form-group">
-                <a class="btn btn-danger" href="mostrarFormularioUser">Alta</a>
-            </div>
+            <p class="lead">Ya sos usuario</p>
+            <a class="btn btn-success btn-sm" href="login">Login</a>
+        </div>
+        <br>
+        <div class="row">
+            <p class="lead">Usuario nuevo?</p>
+            <a class="btn btn-danger btn-sm" href="mostrarFormularioUser">Alta</a>
         </div>
     </div>
 </div>

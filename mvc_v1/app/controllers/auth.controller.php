@@ -1,15 +1,22 @@
 <?php
-    include_once './views/auth.view.php';
-    include_once './models/user.model.php';
+    include_once 'app/views/auth.view.php';
+    include_once 'app/models/user.model.php';
+    include_once 'app/helpers/auth.helper.php';
 
     class AuthController{
 
         private $authView;
         private $userModel;
+        private $authHelper;
 
         public function __construct(){
             $this->userModel = new UserModel();
             $this->authView = new AuthView();
+            $this->authHelper = new AuthHelper();
+        }
+
+        function mostrarHome(){
+            $this->authView->showHome();
         }
 
         public function login(){
@@ -42,18 +49,23 @@
             $password = $_POST['password'];
 
             if(empty($email) || empty($password)){
-                echo 'Faltan datos obligatorios'; //HAY QUE MODIFICARLO!!!!
+                $this->authView->showLogin('Hay algun error en los datos de logueo');
                 die();
             }
 
             $user = $this->userModel->getUserByEmail($email);
 
             if ($user && (password_verify($password, $user->password))){
-                echo 'Usuario correcto'; //HAY QUE MODIFICARLO!!!!
+                $this->authHelper->login($user);
+                header("Location: ".BASE_URL. "listar");
             } else {
-                echo 'Usuario o contraseña incorrectos'; //HAY QUE MODIFICARLO!!!!
+                $this->authView->showLogin('Usuario o contraseña incorrectos');
+                die();
             }
-
         }
 
+        public function logout() {
+            $this->authHelper->logout();
+        }
+    
     }
