@@ -29,7 +29,6 @@ class EmpleadoView {
     }
 
     function showEmpleados($empleados){
-        //$smarty = new Smarty();
         $this->smarty->assign('titulo','Lista de Empleados');
         $this->smarty->assign('tituloPagina','Lista de Empleados');
         $this->smarty->assign('empleados', $empleados);

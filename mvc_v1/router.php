@@ -1,15 +1,19 @@
 <?php
 include_once 'app/controllers/empleado.controller.php';
 include_once 'app/controllers/auth.controller.php';
+phpinfo();
 
 // defino la base url para la construccion de links con urls semánticas
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('LOGIN', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/login');
+define('LOGOUT', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/logout');
+define('LISTAR', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/listar');
 
 // lee la acción
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'home'; // acción por defecto si no envían
+    $action = 'listar'; // acción por defecto si no envían
 }
 
 // parsea la accion Ej: suma/1/2 --> ['suma', 1, 2]
@@ -17,10 +21,6 @@ $params = explode('/', $action);
 
 // determina que camino seguir según la acción
 switch ($params[0]) {
-    case 'home':
-        $controller = new AuthController();
-        $controller->mostrarHome();
-        break;
     case 'listar':
         $controller = new EmpleadoController();
         $controller->mostrarEmpleados();
@@ -51,14 +51,6 @@ switch ($params[0]) {
     case 'login':
         $controller = new AuthController();
         $controller->login();
-        break;
-    case 'mostrarFormularioUser':
-        $controller = new AuthController();
-        $controller->mostrarFormularioAlta();
-        break;
-    case 'agregarUsuario':
-        $controller = new AuthController();
-        $controller->altaUser();
         break;
     case 'verify':
         $controller = new AuthController();

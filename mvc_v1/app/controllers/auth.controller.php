@@ -15,10 +15,6 @@
             $this->authHelper = new AuthHelper();
         }
 
-        function mostrarHome(){
-            $this->authView->showHome();
-        }
-
         function nosotros(){
             $this->authView->showNosotros();
         }
@@ -45,7 +41,7 @@
             $password = password_hash($pass, PASSWORD_DEFAULT);
 
             $this->userModel->addUser($nombre,$apellido,$email,$password);
-            header("Location: ".BASE_URL. "login");
+            header("Location: ".LOGIN);
         }
 
         public function verifyUser(){
@@ -61,7 +57,7 @@
 
             if ($user && (password_verify($password, $user->password))){
                 $this->authHelper->login($user);
-                header("Location: ".BASE_URL. "listar");
+                header("Location: ". LISTAR);
             } else {
                 $this->authView->showLogin('Usuario o contraseña incorrectos');
                 die();

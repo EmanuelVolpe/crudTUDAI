@@ -13,7 +13,6 @@
             $this->empleadoModel = new EmpleadoModel();
             $this->empleadoView = new EmpleadoView();
             $this->authHelper = new AuthHelper();
-            $this->authHelper->checkLogged();
         }
 
         function mostrarFormularioAlta(){
@@ -36,12 +35,12 @@
             }
 
             $this->empleadoModel->addEmpleado($nombre,$apellido,$email);
-            header("Location: ".BASE_URL. "listar");
+            header("Location: " . LISTAR);
         }
 
         function eliminarEmpleado($id){
             $this->empleadoModel->deleteEmpleado($id);
-            header("Location: ".BASE_URL. "listar");
+            header("Location: ". LISTAR);
         }
 
         function mostrarEmpleado($id){
