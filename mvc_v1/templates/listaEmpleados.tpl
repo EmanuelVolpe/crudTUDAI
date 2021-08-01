@@ -24,7 +24,7 @@
             <td>{$empleado->nombre}</td>
             <td>{$empleado->email}</td>
             {if isset($smarty.session.EMAIL_USER)}
-                <td><img src='{$empleado->imagen}'></td>
+                <td><img src='{$empleado->imagen}' width="100" height="100"></td>
             {/if}
             {if isset($smarty.session.EMAIL_USER)}
                 <td><a href='actualizar/{$empleado->id}' class='btn btn-outline-success btn-sm'>Editar</a> -
