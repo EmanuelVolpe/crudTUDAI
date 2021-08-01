@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-01 22:55:05
+/* Smarty version 3.1.39, created on 2021-08-01 23:01:32
   from 'C:\xampp\htdocs\crudTudai\mvc_v1\templates\listaEmpleados.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61070a2924ad67_08515869',
+  'unifunc' => 'content_61070bac9eb4d5_85289472',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '109d366110a9318ec946cb16d05e4cae00e8301c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\crudTudai\\mvc_v1\\templates\\listaEmpleados.tpl',
-      1 => 1627851301,
+      1 => 1627851687,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_61070a2924ad67_08515869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61070bac9eb4d5_85289472 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender('file:header.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -60,7 +60,7 @@ $_smarty_tpl->tpl_vars['empleado']->do_else = false;
 </td>
             <?php if ((isset($_SESSION['EMAIL_USER']))) {?>
                 <td><img src='<?php echo $_smarty_tpl->tpl_vars['empleado']->value->imagen;?>
-'></td>
+' width="100" height="100"></td>
             <?php }?>
             <?php if ((isset($_SESSION['EMAIL_USER']))) {?>
                 <td><a href='actualizar/<?php echo $_smarty_tpl->tpl_vars['empleado']->value->id;?>
