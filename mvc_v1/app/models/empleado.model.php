@@ -28,10 +28,22 @@ class EmpleadoModel{
         return $empleados;
     }
 
-    public function addEmpleado($nombre,$apellido,$email){
-        //$conexion = $this->connection();
-        $sentencia = $this->conexion->prepare("INSERT INTO empleados(nombre, apellido, email) VALUES(?,?,?)");
-        $sentencia->execute([$nombre,$apellido,$email]);
+    private function uploadImage($image){
+        $target = 'images/' . uniqid('', true) . '.' . strtolower(pathinfo($image['name'], PATHINFO_EXTENSION));
+        move_uploaded_file($image['tmp_name'], $target);
+        return $target;
+    }
+
+
+    public function addEmpleado($nombre,$apellido,$email,$imagen = null) {
+        if ($imagen){
+            $sentencia = $this->conexion->prepare("INSERT INTO empleados(nombre, apellido, email, imagen) VALUES(?,?,?,?)");
+            $sentencia->execute([$nombre, $apellido, $email, $imagen]);
+        } else {
+            $sentencia = $this->conexion->prepare("INSERT INTO empleados(nombre, apellido, email) VALUES(?,?,?)");
+            $sentencia->execute([$nombre, $apellido, $email]);
+        }
+        
     }
 
     public function deleteEmpleado($id){

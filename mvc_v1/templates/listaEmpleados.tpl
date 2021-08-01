@@ -11,6 +11,7 @@
         <th scope="col">Apellido</th>
         <th scope="col">Nombre</th>
         <th scope="col">E-mail</th>
+        <th scope="col">Imagen</th>
         {if isset($smarty.session.EMAIL_USER)}
             <th scope="col">Accion</th>
         {/if}
@@ -22,6 +23,9 @@
             <td>{$empleado->apellido}</td>
             <td>{$empleado->nombre}</td>
             <td>{$empleado->email}</td>
+            {if isset($smarty.session.EMAIL_USER)}
+                <td><img src='{$empleado->imagen}'></td>
+            {/if}
             {if isset($smarty.session.EMAIL_USER)}
                 <td><a href='actualizar/{$empleado->id}' class='btn btn-outline-success btn-sm'>Editar</a> -
                     <a href='eliminar/{$empleado->id}' class='btn btn-outline-danger btn-sm'>Borrar</a> -

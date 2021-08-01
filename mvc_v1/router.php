@@ -1,7 +1,6 @@
 <?php
 include_once 'app/controllers/empleado.controller.php';
 include_once 'app/controllers/auth.controller.php';
-phpinfo();
 
 // defino la base url para la construccion de links con urls semánticas
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
@@ -13,7 +12,7 @@ define('LISTAR', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] 
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
-    $action = 'listar'; // acción por defecto si no envían
+    $action = 'listar'; // acción por defecto
 }
 
 // parsea la accion Ej: suma/1/2 --> ['suma', 1, 2]
