@@ -10,8 +10,8 @@ class EmpleadoView {
         $this->smarty = new Smarty();
     }
 
-    function showError(){
-        $this->smarty->assign('msgDeError','ERROR EN LA SOLICITUD');
+    function showError($msgDeError){
+        $this->smarty->assign('msgDeError', $msgDeError);
         $this->smarty->display('templates/showError.tpl'); // muestro el template
     }
 
@@ -29,7 +29,6 @@ class EmpleadoView {
     }
 
     function showEmpleados($empleados){
-        //$smarty = new Smarty();
         $this->smarty->assign('titulo','Lista de Empleados');
         $this->smarty->assign('tituloPagina','Lista de Empleados');
         $this->smarty->assign('empleados', $empleados);

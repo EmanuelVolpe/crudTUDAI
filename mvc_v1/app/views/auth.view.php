@@ -9,11 +9,11 @@
             $this->smarty = new Smarty();
         }
 
-        public function showHome(){
+        /*public function showHome(){
             $this->smarty->assign('titulo','BIENVENIDO A LA APP !!!!');
             $this->smarty->assign('tituloPagina','Bienvenido');
             $this->smarty->display('templates/home.tpl'); // muestro el template
-        }
+        }*/
 
         public function showNosotros(){
             $this->smarty->assign('tituloPagina','Nosotos');

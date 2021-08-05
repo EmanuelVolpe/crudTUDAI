@@ -13,7 +13,6 @@
             $this->empleadoModel = new EmpleadoModel();
             $this->empleadoView = new EmpleadoView();
             $this->authHelper = new AuthHelper();
-            $this->authHelper->checkLogged();
         }
 
         function mostrarFormularioAlta(){
@@ -25,32 +24,44 @@
             $this->empleadoView->showEmpleados($empleados);
         }
 
+        function uniqueRealName($realName, $tempName){
+            $filePath = "images/" . uniqid("", true) . ".". strtolower(pathinfo($realName, PATHINFO_EXTENSION));
+            move_uploaded_file($tempName, $filePath);
+            return $filePath;
+        }
+
         function agregarEmpleado(){
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
             $email = $_POST['email'];
+            //$realName = $_FILES['input_name']['tmp_name'];
 
-            if(empty($nombre) || empty($apellido)){
-                echo 'Faltan datos obligatorios'; //HAY QUE MODIFICARLO!!!!
+            if(empty($nombre) || empty($apellido) || empty($email)){
+                $this->empleadoView->showError('Faltan datos obligatorios');
                 die();
             }
 
-            $this->empleadoModel->addEmpleado($nombre,$apellido,$email);
-            header("Location: ".BASE_URL. "listar");
+            if ($_FILES['input_name']['type'] == "image/jpg" || 
+                $_FILES['input_name']['type'] == "image/jpeg" || 
+                $_FILES['input_name']['type'] == "image/png")
+            {
+                $realName = $this->uniqueRealName($_FILES['input_name']['name'], $_FILES['input_name']['tmp_name']);
+                $this->empleadoModel->addEmpleado($nombre,$apellido,$email,$realName);
+            }
+            else
+                $this->empleadoModel->addEmpleado($nombre, $apellido, $email);
+        
+            header("Location: " . LISTAR);
         }
 
         function eliminarEmpleado($id){
             $this->empleadoModel->deleteEmpleado($id);
-            header("Location: ".BASE_URL. "listar");
+            header("Location: ". LISTAR);
         }
 
         function mostrarEmpleado($id){
             $empleado = $this->empleadoModel->getEmpleado($id);
             $this->empleadoView->showEmpleado($empleado);
-        }
-
-        function muestraError(){
-            $this->empleadoView->showError();
         }
     }
 

@@ -14,37 +14,40 @@
 
 {if isset($smarty.session.EMAIL_USER)}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav d-flex w-100">
-            <li class="nav-item">
-                <a class="nav-link">Sistema de Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="listar">Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="mostrarFormularioEmpleado">Alta Empleado</a>
-            </li>
-            <li class="nav-item ml-auto">
-                <a class="nav-link" href="logout">{$smarty.session.EMAIL_USER} (LOGOUT)</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav d-flex w-100">
+                <li class="nav-item">
+                    <a class="navbar-brand">Sistema de Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="listar">Empleados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="mostrarFormularioEmpleado">Alta Empleado</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="logout">{$smarty.session.EMAIL_USER} (LOGOUT)</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
 
 {else}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav d-flex w-100">
-            <li class="nav-item">
-                <a class="nav-link">Sistema de Empleados</a>
-            </li>                
-        </ul>
-    </div>
-</nav>
-<br>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav d-flex w-100">
+                <li class="nav-item">
+                    <a class="nav-link">Sistema de Empleados</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="login">Login</a>
+                </li>               
+            </ul>
+        </div>
+    </nav>
+    <br>
 
 {/if}

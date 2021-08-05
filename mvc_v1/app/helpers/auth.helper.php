@@ -15,7 +15,7 @@ class AuthHelper {
     public function checkLogged() {
         //session_start();
         if (!isset($_SESSION['ID_USER']) && !isset($_SESSION['EMAIL_USER'])) {
-            header("Location: " . BASE_URL . 'home');
+            header("Location: " . LISTAR);
             die(); 
         }
     }   
@@ -23,7 +23,7 @@ class AuthHelper {
     public function logout() {
         //session_start();
         session_destroy();
-        header("Location: " . BASE_URL . 'home');
+        header("Location: " . LISTAR);
     }    
 
     public function login($user) {
